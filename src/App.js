@@ -1,12 +1,8 @@
 import "./App.css";
 import Select from "react-select";
+import { lineOptions, yearOptions, monthOptions } from "./js/setOption";
 
 function App() {
-    const options = [
-        { value: "1호선", label: "1호선" },
-        { value: "2호선", label: "2호선" },
-    ];
-
     return (
         <div className="App">
             <h1>Transit Trend</h1>
@@ -16,9 +12,25 @@ function App() {
                 <Select
                     id="line"
                     className="select-box"
-                    defaultValue={options[0]}
+                    defaultValue={lineOptions[0]}
                     onChange={() => console.log("asdf")}
-                    options={options}
+                    options={lineOptions}
+                />
+                <label htmlFor="year">년도</label>
+                <Select
+                    id="year"
+                    className="select-box"
+                    defaultValue={yearOptions[0]}
+                    onChange={() => console.log("qwer")}
+                    options={yearOptions}
+                />
+                <label htmlFor="month">월</label>
+                <Select
+                    id="month"
+                    className="select-box"
+                    defaultValue={monthOptions[0]}
+                    onChange={() => console.log("zxcv")}
+                    options={monthOptions}
                 />
             </div>
         </div>
